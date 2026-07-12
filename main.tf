@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.stream_analytics_clusters : {
       for k2, v2 in coalesce(v1.stream_analytics_managed_private_endpoints, {}) :
       "${k1}/${k2}" => merge(v2, {
-        stream_analytics_cluster_name = module.stream_analytics_clusters.stream_analytics_clusters["${k1}"].name
+        stream_analytics_cluster_name = module.stream_analytics_clusters.stream_analytics_clusters_name["${k1}"]
       })
     }
   ]...)
