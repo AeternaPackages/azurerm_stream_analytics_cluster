@@ -1,4 +1,9 @@
 # --- azurerm_stream_analytics_cluster ---
+output "stream_analytics_clusters_id" {
+  description = "Map of id values across all stream_analytics_clusters, keyed the same as var.stream_analytics_clusters"
+  value       = module.stream_analytics_clusters.stream_analytics_clusters_id
+}
+
 output "stream_analytics_clusters_location" {
   description = "Map of location values across all stream_analytics_clusters, keyed the same as var.stream_analytics_clusters"
   value       = module.stream_analytics_clusters.stream_analytics_clusters_location
@@ -25,6 +30,11 @@ output "stream_analytics_clusters_tags" {
 }
 
 # --- azurerm_stream_analytics_managed_private_endpoint ---
+output "stream_analytics_managed_private_endpoints_id" {
+  description = "Map of id values across all stream_analytics_managed_private_endpoints, keyed the same as var.stream_analytics_managed_private_endpoints"
+  value       = module.stream_analytics_managed_private_endpoints.stream_analytics_managed_private_endpoints_id
+}
+
 output "stream_analytics_managed_private_endpoints_name" {
   description = "Map of name values across all stream_analytics_managed_private_endpoints, keyed the same as var.stream_analytics_managed_private_endpoints"
   value       = module.stream_analytics_managed_private_endpoints.stream_analytics_managed_private_endpoints_name
