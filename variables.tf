@@ -298,16 +298,16 @@ EOT
       resource_group_name                      = string
       transformation_query                     = string
       compatibility_level                      = optional(string)
-      content_storage_policy                   = optional(string) # Default: "SystemAccount"
-      data_locale                              = optional(string) # Default: "en-US"
-      events_late_arrival_max_delay_in_seconds = optional(number) # Default: 5
-      events_out_of_order_max_delay_in_seconds = optional(number) # Default: 0
-      events_out_of_order_policy               = optional(string) # Default: "Adjust"
-      output_error_policy                      = optional(string) # Default: "Drop"
-      sku_name                                 = optional(string) # Default: "Standard"
+      content_storage_policy                   = optional(string)
+      data_locale                              = optional(string)
+      events_late_arrival_max_delay_in_seconds = optional(number)
+      events_out_of_order_max_delay_in_seconds = optional(number)
+      events_out_of_order_policy               = optional(string)
+      output_error_policy                      = optional(string)
+      sku_name                                 = optional(string)
       streaming_units                          = optional(number)
       tags                                     = optional(map(string))
-      type                                     = optional(string) # Default: "Cloud"
+      type                                     = optional(string)
       identity = optional(object({
         identity_ids = optional(set(string))
         type         = string
@@ -315,13 +315,13 @@ EOT
       job_storage_account = optional(object({
         account_key         = optional(string)
         account_name        = string
-        authentication_mode = optional(string) # Default: "ConnectionString"
+        authentication_mode = optional(string)
       }))
       stream_analytics_function_javascript_udas = optional(map(object({
         name   = string
         script = string
         input = list(object({
-          configuration_parameter = optional(bool) # Default: false
+          configuration_parameter = optional(bool)
           type                    = string
         }))
         output = object({
@@ -333,7 +333,7 @@ EOT
         resource_group_name = string
         script              = string
         input = list(object({
-          configuration_parameter = optional(bool) # Default: false
+          configuration_parameter = optional(bool)
           type                    = string
         }))
         output = object({
@@ -359,10 +359,10 @@ EOT
         storage_account_name                      = string
         storage_container_name                    = string
         time_format                               = string
-        authentication_mode                       = optional(string) # Default: "ConnectionString"
+        authentication_mode                       = optional(string)
         batch_max_wait_time                       = optional(string)
         batch_min_rows                            = optional(number)
-        blob_write_mode                           = optional(string) # Default: "Append"
+        blob_write_mode                           = optional(string)
         storage_account_key                       = optional(string)
         storage_account_key_key_vault_id          = optional(string)
         storage_account_key_key_vault_secret_name = optional(string)
@@ -380,7 +380,7 @@ EOT
         cosmosdb_account_key_key_vault_secret_name = optional(string)
         cosmosdb_sql_database_id                   = string
         name                                       = string
-        authentication_mode                        = optional(string) # Default: "ConnectionString"
+        authentication_mode                        = optional(string)
         document_id                                = optional(string)
         partition_key                              = optional(string)
       })))
@@ -389,7 +389,7 @@ EOT
         name                                           = string
         resource_group_name                            = string
         servicebus_namespace                           = string
-        authentication_mode                            = optional(string) # Default: "ConnectionString"
+        authentication_mode                            = optional(string)
         partition_key                                  = optional(string)
         property_columns                               = optional(list(string))
         shared_access_policy_key                       = optional(string)
@@ -411,8 +411,8 @@ EOT
         function_name                 = string
         name                          = string
         resource_group_name           = string
-        batch_max_count               = optional(number) # Default: 100
-        batch_max_in_bytes            = optional(number) # Default: 262144
+        batch_max_count               = optional(number)
+        batch_max_in_bytes            = optional(number)
       })))
       stream_analytics_output_mssqls = optional(map(object({
         database                       = string
@@ -420,9 +420,9 @@ EOT
         resource_group_name            = string
         server                         = string
         table                          = string
-        authentication_mode            = optional(string) # Default: "ConnectionString"
-        max_batch_count                = optional(number) # Default: 10000
-        max_writer_count               = optional(number) # Default: 1
+        authentication_mode            = optional(string)
+        max_batch_count                = optional(number)
+        max_writer_count               = optional(number)
         password                       = optional(string)
         password_key_vault_id          = optional(string)
         password_key_vault_secret_name = optional(string)
@@ -442,7 +442,7 @@ EOT
         queue_name                                     = string
         resource_group_name                            = string
         servicebus_namespace                           = string
-        authentication_mode                            = optional(string) # Default: "ConnectionString"
+        authentication_mode                            = optional(string)
         property_columns                               = optional(list(string))
         shared_access_policy_key                       = optional(string)
         shared_access_policy_key_key_vault_id          = optional(string)
@@ -461,7 +461,7 @@ EOT
         resource_group_name                            = string
         servicebus_namespace                           = string
         topic_name                                     = string
-        authentication_mode                            = optional(string) # Default: "ConnectionString"
+        authentication_mode                            = optional(string)
         property_columns                               = optional(list(string))
         shared_access_policy_key                       = optional(string)
         shared_access_policy_key_key_vault_id          = optional(string)
@@ -507,7 +507,7 @@ EOT
         storage_account_name                      = string
         storage_container_name                    = string
         time_format                               = string
-        authentication_mode                       = optional(string) # Default: "ConnectionString"
+        authentication_mode                       = optional(string)
         storage_account_key                       = optional(string)
         storage_account_key_key_vault_id          = optional(string)
         storage_account_key_key_vault_secret_name = optional(string)
@@ -543,7 +543,7 @@ EOT
         storage_account_name                      = string
         storage_container_name                    = string
         time_format                               = string
-        authentication_mode                       = optional(string) # Default: "ConnectionString"
+        authentication_mode                       = optional(string)
         serialization = object({
           encoding        = optional(string)
           field_delimiter = optional(string)
@@ -555,7 +555,7 @@ EOT
         name                                           = string
         resource_group_name                            = string
         servicebus_namespace                           = string
-        authentication_mode                            = optional(string) # Default: "ConnectionString"
+        authentication_mode                            = optional(string)
         eventhub_consumer_group_name                   = optional(string)
         partition_key                                  = optional(string)
         shared_access_policy_key                       = optional(string)
@@ -572,7 +572,7 @@ EOT
         eventhub_name                                  = string
         name                                           = string
         servicebus_namespace                           = string
-        authentication_mode                            = optional(string) # Default: "ConnectionString"
+        authentication_mode                            = optional(string)
         eventhub_consumer_group_name                   = optional(string)
         partition_key                                  = optional(string)
         shared_access_policy_key                       = optional(string)
