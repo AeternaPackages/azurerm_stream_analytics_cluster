@@ -163,34 +163,34 @@ output "stream_analytics_managed_private_endpoints_target_resource_id" {
 }
 
 # --- azurerm_stream_analytics_function_javascript_uda ---
-output "stream_analytics_function_javascript_udas_id" {
-  description = "Map of id values across all stream_analytics_function_javascript_udas, keyed the same as var.stream_analytics_function_javascript_udas"
-  value       = module.stream_analytics_function_javascript_udas.stream_analytics_function_javascript_udas_id
+output "stream_analytics_function_javascript_uda_id" {
+  description = "Map of id values across all stream_analytics_function_javascript_uda, keyed the same as var.stream_analytics_function_javascript_uda"
+  value       = module.stream_analytics_function_javascript_uda.stream_analytics_function_javascript_uda_id
 }
 
-output "stream_analytics_function_javascript_udas_input" {
-  description = "Map of input values across all stream_analytics_function_javascript_udas, keyed the same as var.stream_analytics_function_javascript_udas"
-  value       = module.stream_analytics_function_javascript_udas.stream_analytics_function_javascript_udas_input
+output "stream_analytics_function_javascript_uda_input" {
+  description = "Map of input values across all stream_analytics_function_javascript_uda, keyed the same as var.stream_analytics_function_javascript_uda"
+  value       = module.stream_analytics_function_javascript_uda.stream_analytics_function_javascript_uda_input
 }
 
-output "stream_analytics_function_javascript_udas_name" {
-  description = "Map of name values across all stream_analytics_function_javascript_udas, keyed the same as var.stream_analytics_function_javascript_udas"
-  value       = module.stream_analytics_function_javascript_udas.stream_analytics_function_javascript_udas_name
+output "stream_analytics_function_javascript_uda_name" {
+  description = "Map of name values across all stream_analytics_function_javascript_uda, keyed the same as var.stream_analytics_function_javascript_uda"
+  value       = module.stream_analytics_function_javascript_uda.stream_analytics_function_javascript_uda_name
 }
 
-output "stream_analytics_function_javascript_udas_output" {
-  description = "Map of output values across all stream_analytics_function_javascript_udas, keyed the same as var.stream_analytics_function_javascript_udas"
-  value       = module.stream_analytics_function_javascript_udas.stream_analytics_function_javascript_udas_output
+output "stream_analytics_function_javascript_uda_output" {
+  description = "Map of output values across all stream_analytics_function_javascript_uda, keyed the same as var.stream_analytics_function_javascript_uda"
+  value       = module.stream_analytics_function_javascript_uda.stream_analytics_function_javascript_uda_output
 }
 
-output "stream_analytics_function_javascript_udas_script" {
-  description = "Map of script values across all stream_analytics_function_javascript_udas, keyed the same as var.stream_analytics_function_javascript_udas"
-  value       = module.stream_analytics_function_javascript_udas.stream_analytics_function_javascript_udas_script
+output "stream_analytics_function_javascript_uda_script" {
+  description = "Map of script values across all stream_analytics_function_javascript_uda, keyed the same as var.stream_analytics_function_javascript_uda"
+  value       = module.stream_analytics_function_javascript_uda.stream_analytics_function_javascript_uda_script
 }
 
-output "stream_analytics_function_javascript_udas_stream_analytics_job_id" {
-  description = "Map of stream_analytics_job_id values across all stream_analytics_function_javascript_udas, keyed the same as var.stream_analytics_function_javascript_udas"
-  value       = module.stream_analytics_function_javascript_udas.stream_analytics_function_javascript_udas_stream_analytics_job_id
+output "stream_analytics_function_javascript_uda_stream_analytics_job_id" {
+  description = "Map of stream_analytics_job_id values across all stream_analytics_function_javascript_uda, keyed the same as var.stream_analytics_function_javascript_uda"
+  value       = module.stream_analytics_function_javascript_uda.stream_analytics_function_javascript_uda_stream_analytics_job_id
 }
 
 # --- azurerm_stream_analytics_function_javascript_udf ---

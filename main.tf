@@ -19,10 +19,10 @@ locals {
     }
   ]...)
 
-  stream_analytics_function_javascript_udas = merge([
+  stream_analytics_function_javascript_uda = merge([
     for k1, v1 in var.stream_analytics_clusters : merge([
       for k2, v2 in coalesce(v1.stream_analytics_jobs, {}) : {
-        for k3, v3 in coalesce(v2.stream_analytics_function_javascript_udas, {}) :
+        for k3, v3 in coalesce(v2.stream_analytics_function_javascript_uda, {}) :
         "${k1}/${k2}/${k3}" => merge(v3, {
           stream_analytics_job_id = module.stream_analytics_jobs.stream_analytics_jobs_id["${k1}/${k2}"]
         })
@@ -257,10 +257,10 @@ module "stream_analytics_managed_private_endpoints" {
   depends_on                                 = [module.stream_analytics_clusters]
 }
 
-module "stream_analytics_function_javascript_udas" {
-  source                                    = "git::https://github.com/AeternaModules/azurerm_stream_analytics_function_javascript_uda.git?ref=v4.80.0"
-  stream_analytics_function_javascript_udas = local.stream_analytics_function_javascript_udas
-  depends_on                                = [module.stream_analytics_jobs]
+module "stream_analytics_function_javascript_uda" {
+  source                                   = "git::https://github.com/AeternaModules/azurerm_stream_analytics_function_javascript_uda.git?ref=v4.80.0"
+  stream_analytics_function_javascript_uda = local.stream_analytics_function_javascript_uda
+  depends_on                               = [module.stream_analytics_jobs]
 }
 
 module "stream_analytics_function_javascript_udfs" {

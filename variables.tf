@@ -28,7 +28,7 @@ Nested stream_analytics_jobs (azurerm_stream_analytics_job):
         - type
         - identity (block)
         - job_storage_account (block)
-    Nested stream_analytics_function_javascript_udas (azurerm_stream_analytics_function_javascript_uda):
+    Nested stream_analytics_function_javascript_uda (azurerm_stream_analytics_function_javascript_uda):
         Required:
             - name
             - script
@@ -317,7 +317,7 @@ EOT
         account_name        = string
         authentication_mode = optional(string)
       }))
-      stream_analytics_function_javascript_udas = optional(map(object({
+      stream_analytics_function_javascript_uda = optional(map(object({
         name   = string
         script = string
         input = list(object({
@@ -614,7 +614,7 @@ EOT
     condition = alltrue(concat(
       [for kk in keys(var.stream_analytics_clusters) : !strcontains(kk, "/")],
       flatten([for k0, v0 in var.stream_analytics_clusters : [for kk in keys(coalesce(v0.stream_analytics_jobs, {})) : !strcontains(kk, "/")]]),
-      flatten([for k0, v0 in var.stream_analytics_clusters : [for k1, v1 in coalesce(v0.stream_analytics_jobs, {}) : [for kk in keys(coalesce(v1.stream_analytics_function_javascript_udas, {})) : !strcontains(kk, "/")]]]),
+      flatten([for k0, v0 in var.stream_analytics_clusters : [for k1, v1 in coalesce(v0.stream_analytics_jobs, {}) : [for kk in keys(coalesce(v1.stream_analytics_function_javascript_uda, {})) : !strcontains(kk, "/")]]]),
       flatten([for k0, v0 in var.stream_analytics_clusters : [for k1, v1 in coalesce(v0.stream_analytics_jobs, {}) : [for kk in keys(coalesce(v1.stream_analytics_function_javascript_udfs, {})) : !strcontains(kk, "/")]]]),
       flatten([for k0, v0 in var.stream_analytics_clusters : [for k1, v1 in coalesce(v0.stream_analytics_jobs, {}) : [for kk in keys(coalesce(v1.stream_analytics_job_schedules, {})) : !strcontains(kk, "/")]]]),
       flatten([for k0, v0 in var.stream_analytics_clusters : [for k1, v1 in coalesce(v0.stream_analytics_jobs, {}) : [for kk in keys(coalesce(v1.stream_analytics_job_storage_accounts, {})) : !strcontains(kk, "/")]]]),
